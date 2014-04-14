@@ -1,0 +1,26 @@
+.tab-pane form {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+}
+.glyphicon-info-sign {
+	cursor: pointer;
+}
+
+.glyphicon-remove-sign {
+	cursor: pointer;
+}
+
+.modal-vertical-centered {
+transform: translate(0, 50%) !important;
+-ms-transform: translate(0, 50%) !important; /* IE 9 */
+-webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+}
+
+.plz {
+	padding-left: 0px;
+}
+
+.prz {
+	padding-right: 0px;
+}
