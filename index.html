@@ -33,14 +33,14 @@
 			<div class="panel panel-default">
 				<!-- panel header -->
 				<div class="panel-heading">
-					<h1>Create new Projectsss</h1>
+					<h1>Create new Project</h1>
 				</div>
 				
 				<!-- panel body -->
 				<div class="panel-body">
 
 					<!-- Nav tabs -->
-					<ul class="nav nav-tabs">
+					<ul class="nav nav-tabs tabs">
 						<li class="active"><a href="#a" data-toggle="tab">Basic Settings</a></li>
 						<li><a href="#b" data-toggle="tab">Advanced Settings</a></li>
 						<li><a href="#c" data-toggle="tab">Relations</a></li>
@@ -51,11 +51,21 @@
 						<div class="tab-pane active" id="a">
 							<form role="form">
 								<div class="row">
+								
 									<!-- FIRST COLUMN -->
 									<div class="col-sm-6">
 										<div class="form-group">
+											<label class="control-label">Project type <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></label>
+											<select class="form-control">
+												<option>Research</option>
+												<option>Consultancy</option>
+												<option>Other</option>
+											</select>
+										</div>
+										<div class="form-group" id="title-form-group">
 											<label class="control-label">Title <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></span></label>
-											<input class="form-control"></input>
+											<input class="form-control" id="title"></input>
+											<span class="glyphicon glyphicon-remove form-control-feedback" id="title-error"></span>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Description <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
@@ -64,10 +74,12 @@
 										<div class="form-group col-sm-6 plz">
 											<label class="control-label">Start date <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
 											<input class="form-control dp"></input>
+											<p class="help-block">dd/mm/yyyy</p>
 										</div>
 										<div class="form-group col-sm-6 prz">
 											<label class="control-label">End date <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
 											<input class="form-control dp"></input>
+											<p class="help-block">dd/mm/yyyy</p>
 										</div>
 									</div>
 									
@@ -79,17 +91,102 @@
 											</ul>
 											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#author_modal">Add participant</button>
 										</div>
+										<div class="form-group">
+											<label class="control-label">Managing Organizational units  <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<ul class="list-group">
+												<li class="list-group-item">Department of Computer Science <span class="glyphicon glyphicon-remove-sign pull-right"></span></li>
+											</ul>
+											<button type="button" class="btn btn-default">Add organizational unit</button>
+										</div>
 									</div>
 								</div>
 							</form>
 						</div>
-						<div class="tab-pane" id="b">...</div>
+						<div class="tab-pane" id="b">
+							<form role="form"></form>
+								<div class="row">
+									<div class="col-sm-6">
+										<form class="form-group">
+											<label class="control-label">Collaborative partners</label>
+											<ul class="list-group">
+											</ul>
+											<button type="button" class="btn btn-default">Add collaborative partner</button>
+										</form>
+										<form class="form-group">
+											<label class="control-label">Links</label>
+											<ul class="list-group">
+												<li class="list-group-item">http://www.aalto.fi <span class="glyphicon glyphicon-remove-sign pull-right"></span></li>
+											</ul>
+											<button type="button" class="btn btn-default">Add link</button>
+										</form>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Files</label>
+											<table class="table table-striped">
+												<tr>
+													<th>File</th>
+													<th>Type</th>
+													<th>Publicity</th>
+													<th>Remove</th>
+												</tr>
+												<!-- project plan -->
+												<tr>
+													<td>Project plan.pdf</td>
+													<td>
+														<select class="form-control">
+															<option selected>Project Plan</option>
+															<option>Funding Plan</option>
+															<option>Other</option>
+														</select>
+													</td>
+													<td>
+														<select class="form-control">
+															<option selected>Visible to all</option>
+															<option>Visible to campus</option>
+															<option>Hidden</option>
+														</select>
+													</td>
+													<td><span class="glyphicon glyphicon-remove-sign"></span></td>
+												</tr>
+												
+												<tr>
+													<td>Funding plan.pdf</td>
+													<td>
+														<select class="form-control">
+															<option>Project Plan</option>
+															<option>Funding Plan</option>
+															<option>Other</option>
+														</select>
+													</td>
+													<td>
+														<select class="form-control">
+															<option>Visible to all</option>
+															<option>Visible to campus</option>
+															<option>Hidden</option>
+														</select>
+													</td>
+													<td><span class="glyphicon glyphicon-remove-sign"></span></td>
+												</tr>
+												
+											</table>
+											<button type="button" class="btn btn-default">Add file</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
 						<div class="tab-pane" id="c">...</div>
 					</div>
 
 					
 					<!-- save button -->
-					<button type="button" class="btn btn-default pull-right">Save</button>
+					<!--<div class="row mpz">
+						<div class="col-sm-8 alert alert-danger" id="error-bar">Please fill in all the required fields</div>
+						<div class="col-sm-2"></div>
+						<button type="button" class="btn btn-default col-sm-2" onclick="preview_and_save();">Preview and save</button>
+					</div>-->
+					<button type="button" class="btn btn-default col-sm-2 pull-right" onclick="preview_and_save();">Preview and save</button>
 				</div>
 			</div>
 		</div>

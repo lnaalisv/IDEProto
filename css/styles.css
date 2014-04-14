@@ -24,3 +24,16 @@ transform: translate(0, 50%) !important;
 .prz {
 	padding-right: 0px;
 }
+
+.mpz {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.jumbotron {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	padding-top: 10px;
+}
