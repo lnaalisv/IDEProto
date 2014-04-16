@@ -37,3 +37,7 @@ transform: translate(0, 50%) !important;
 	padding-bottom: 15px;
 	padding-top: 10px;
 }
+
+.error-block {
+	color: red;
+}
