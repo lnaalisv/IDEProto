@@ -36,7 +36,7 @@ $(document).ready(function() {
 	var data = {};
 	data["Research output"] = {};
 	data["Research output"]["Contribution to journal"] = {};
-	data["Research output"]["Contribution to journal"][0] = "Article";
+	data["Research output"]["Contribution to journal"][0] = "Journal Article";
 	data["Research output"]["Contribution to journal"][1] = "Letter";
 	data["Research output"]["Contribution to journal"][2] = "Editorial";
 	data["Research output"]["Working paper"] = {};
@@ -49,7 +49,7 @@ $(document).ready(function() {
 	
 function select_click() {
 	var item = $("#type-select3").val();
-	if(item == "Article") {
+	if(item == "Journal Article") {
 		$("#main-add").toggleClass("active");
 		$("#new-article").toggleClass("active");;
 	}
@@ -128,7 +128,7 @@ function init_stuff_modal(header,tab1,tab2,tab1firstlabel,tab1lastlabel,tab2firs
 function journal_init() {
 	$("#tab2-first").typeahead("destroy");
 	$("#tab2-first").typeahead({
-		source: ["Aku Ankka", "Tieteen kuvalehti", "ACM for blaablaa"]
+		source: ["ACM SIGCOMM Computer Communication Review", "Proceedings  of 41st SEFI Conference", "Proceedings of the 13th Koli Calling International Conference on Computing Education Research", "IEEE COMMUNICATIONS SURVEYS AND TUTORIALS"]
 	});
 	$("#tab1-last-group").hide();
 }
@@ -310,4 +310,14 @@ function preview_and_save() {
 		$("#c").removeClass("active");
 		$("#a").addClass("active");
 	}
+}
+
+function add_article() {
+	var authors = "";
+	for(var i = 0 ; i < $("#authors").children().length ; i++) {
+		var author = $($("#authors").children()[i]).attr("data-value");
+		authors += author + ", ";
+	}
+	authors = authors.substring(0,authors.length - 1);
+	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>"+$("#title").val()+"</h1><p><b>Authors: </b>"+authors+"<br/><b>"+$("#year-input").val()+"</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly created</h3></div></div>");
 }
