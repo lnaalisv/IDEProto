@@ -41,3 +41,11 @@ transform: translate(0, 50%) !important;
 .error-block {
 	color: red;
 }
+#year-error {
+	padding-right: 25px;
+}
+
+#preview-modal {
+	padding-left: 15px;
+	padding-right: 15px;
+}

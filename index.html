@@ -35,7 +35,7 @@
 			<div class="panel panel-default">
 				<!-- panel header -->
 				<div class="panel-heading">
-					<h1>Create new Project</h1>
+					<h1>Add new Article</h1>
 				</div>
 				
 				<!-- panel body -->
@@ -43,9 +43,9 @@
 
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs tabs">
-						<li class="active"><a href="#a" data-toggle="tab">Basic Information</a></li>
-						<li><a href="#b" data-toggle="tab">Advanced Information</a></li>
-						<li><a href="#c" data-toggle="tab">Relations</a></li>
+						<li id="ah" class="active"><a href="#a" data-toggle="tab">Basic Information *</a></li>
+						<li id="bh"><a href="#b" data-toggle="tab">Additional Information</a></li>
+						<li id="ch"><a href="#c" data-toggle="tab">Relations</a></li>
 					</ul>
 
 					<!-- Tab panes -->
@@ -56,14 +56,6 @@
 								
 									<!-- FIRST COLUMN -->
 									<div class="col-sm-6">
-										<div class="form-group">
-											<label class="control-label">Project type* <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></label>
-											<select class="form-control">
-												<option>Research</option>
-												<option>Consultancy</option>
-												<option>Other</option>
-											</select>
-										</div>
 										<div class="form-group" id="title-form-group">
 											<label class="control-label">Title* <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></span></label>
 											<input class="form-control" id="title"></input>
@@ -71,34 +63,76 @@
 											<p class="help-block error-block" id="fillin">Please fill in the required field</p>
 										</div>
 										<div class="form-group">
-											<label class="control-label">Description <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<textarea class="form-control" rows="3"></textarea>
+											<label class="control-label">Publication state <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
+											<select class="form-control" id="state">
+												<option>In preparation</option>
+												<option>In press</option>
+												<option selected>Published</option>
+												<option>Unpublished</option>
+											</select>
+										</div>
+										<div class="form-group" id="journal-group">
+											<label class="control-label">Journal*  <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<p class="help-block error-block" id="journal-error">Please add a journal</p>
+											<ul class="list-group" id="journals">
+											</ul>
+											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#stuff-modal" onclick="init_stuff_modal('Add Journal','Add Journal','Search for Journal','Name','Last name','Search',journal_submit,journal_init)">Add Journal</button>
 										</div>
 										<div class="form-group col-sm-6 plz">
-											<label class="control-label">Start date* <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
-											<input class="form-control dp"></input>
-											<p class="help-block">dd/mm/yyyy</p>
-										</div>
-										<div class="form-group col-sm-6 prz">
-											<label class="control-label">End date <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
-											<input class="form-control dp"></input>
-											<p class="help-block">dd/mm/yyyy</p>
+											<label class="control-label">Journal Publication Date <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
+											<div class="row">
+												<div class="form-group col-sm-6" id="year-group">
+													<label class="control-label">Year *</label>
+													<input class="form-control" id="year-input"></input>
+													<span class="glyphicon glyphicon-remove form-control-feedback" id="year-error"></span>
+												</div>
+												
+												<div class="col-sm-6">
+													<label class="control-label">Month</label>
+													<select class="form-control" id="month-input">
+														<option selected></option>
+														<option>January</option>
+														<option>February</option>
+														<option>March</option>
+														<option>April</option>
+														<option>May</option>
+														<option>June</option>
+														<option>July</option>
+														<option>August</option>
+														<option>September</option>
+														<option>October</option>
+														<option>November</option>
+														<option>December</option>
+													</select>
+												</div>
+											</div>
 										</div>
 									</div>
 									
 									<!-- SECOND COLUMN -->
 									<div class="col-sm-6">
-										<div class="form-group">
-											<label class="control-label">Participants* <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<ul class="list-group" id="authors">
+										<div class="form-group" id="author-group">
+											<label class="control-label">Authors* <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<p class="help-block error-block" id="author-error">Please add at least one author</p>
+											<ul class="list-group sortable" id="authors">
 											</ul>
-											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#author_modal">Add participant</button>
+											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#stuff-modal" onclick="init_stuff_modal('Add new Author','Add new author','Search for author','First name','Last name','Search',author_submit,author_init)">Add author</button>
 										</div>
-										<div class="form-group">
+										<div class="form-group" id="organization-group">
 											<label class="control-label">Managing Organizational units*  <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<p class="help-block error-block" id="organization-error">Please add an organizational unit</p>
 											<ul class="list-group" id="organizations">
 											</ul>
-											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#organization_modal">Add organizational unit</button>
+											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#stuff-modal" onclick="init_stuff_modal('Add new Organization','Add new Organization','Search for Organization','Name','Last name','Search',organization_submit,organization_init)">Add organizational unit</button>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Peer-reviewed <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
+											<div class="radio">
+												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Yes</label>
+											</div>
+											<div class="radio">
+												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option2">No</label>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -110,36 +144,34 @@
 								
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label class="control-label">Nature of activity <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<label class="control-label">Original language <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
 											<select class="form-control">
-												<option>Dissertation project</option>
-												<option>Individual grant</option>
-												<option>Non-academic projects</option>
+												<option selected>English</option>
+												<option>Finnish</option>
+												<option>German</option>
+												<option>French</option>
+												<option>Spanish</option>
+												<option>Italian</option>
+												<option>Russian</option>
+												<option>Chinese</option>
 												<option>Other</option>
-												<option>Practical Project</option>
-												<option>Research</option>
-												<option>Scientific Event</option>
-												<option>Teaching</option>
-												<option>Transfer</option>
 											</select>
 										</div>
 										<div class="form-group">
-											<label class="control-label">Short title <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<label class="control-label">Number of pages <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
 											<input class="form-control"></input>
 										</div>
 										<div class="form-group">
-											<label class="control-label">Acronym <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<input class="form-control"></input>
+											<label class="control-label">Abstract <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<textarea class="form-control" rows="3"></textarea>
 										</div>
 										<div class="form-group">
-											<label class="control-label">Collaborative partners <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<ul class="list-group">
-											</ul>
-											<button type="button" class="btn btn-default">Add collaborative partner</button>
+											<label class="control-label">DOI <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<input class="form-control"></input>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Links <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<ul class="list-group">
+											<ul class="list-group" id="links">
 												<li class="list-group-item">http://www.aalto.fi <span class="glyphicon glyphicon-remove-sign pull-right"></span></li>
 											</ul>
 											<button type="button" class="btn btn-default">Add link</button>
@@ -148,7 +180,7 @@
 									
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label class="control-label">Files <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
+											<label class="control-label">Documents <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
 											<table class="table table-striped">
 												<tr>
 													<th>File</th>
@@ -157,7 +189,7 @@
 													<th>Remove</th>
 												</tr>
 												<!-- project plan -->
-												<tr>
+												<!--<tr>
 													<td>Project plan.pdf</td>
 													<td>
 														<select class="form-control">
@@ -193,19 +225,22 @@
 														</select>
 													</td>
 													<td><span class="glyphicon glyphicon-remove-sign"></span></td>
-												</tr>
+												</tr>-->
 												
 											</table>
 											<button type="button" class="btn btn-default">Add file</button>
 										</div>
 										<div class="form-group">
-											<label class="control-label">Choice</label>
-											<div class="radio">
-												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Option 1</label>
-											</div>
-											<div class="radio">
-												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option2">Option 2</label>
-											</div>
+											<label class="control-label">Journal Pages (from-to <span class="glyphicon glyphicon-info-sign"></span>)</label>
+											<input class="form-control"></input>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Journal Volume Number <span class="glyphicon glyphicon-info-sign"></span></label>
+											<input class="form-control"></input>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Journal Issue Number <span class="glyphicon glyphicon-info-sign"></span></label>
+											<input class="form-control"></input>
 										</div>
 									</div>
 								</div>
@@ -272,19 +307,19 @@
 		</div>
 		
 		
-		<!-- add author modal -->
-		<div class="modal fade" id="author_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<!-- add stuff modal -->
+		<div class="modal fade" id="stuff-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-vertical-centered">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Add new participant <span class="glyphicon glyphicon-info-sign"></span></h4>
+						<h4 class="modal-title"><span id="add-stuff-header">Add new STUFF</span> <span class="glyphicon glyphicon-info-sign"></span></h4>
 					</div>
 					<div class="modal-body">
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs">
-							<li class="active"><a href="#aa" data-toggle="tab">Add new participant</a></li>
-							<li><a href="#bb" data-toggle="tab">Search participants</a></li>
+							<li class="active"><a href="#aa" data-toggle="tab" id="add-stuff-tab1-header">Add new STUFF</a></li>
+							<li><a href="#bb" data-toggle="tab"  id="add-stuff-tab2-header">Search STUFF</a></li>
 						</ul>
 
 						<!-- Tab panes -->
@@ -292,20 +327,20 @@
 							<div class="tab-pane active" id="aa">
 								<form role="form">
 									<div class="form-group">
-										<label class="control-label">First name</label>
-										<input class="form-control" id="fname"></input>
+										<label class="control-label" id="tab1-first-label">Tab1 first</label>
+										<input class="form-control" id="tab1-first"></input>
 									</div>
-									<div class="form-group">
-										<label class="control-label">Last name</label>
-										<input class="form-control" id="lname"></input>
+									<div class="form-group"  id="tab1-last-group">
+										<label class="control-label" id="tab1-last-label">Tab1 last</label>
+										<input class="form-control" id="tab1-last"></input>
 									</div>
 								</form>
 							</div>
 							<div class="tab-pane" id="bb">
 								<form role="form">
 									<div class="form-group">
-										<label class="control-label">Search for person</label>
-										<input class="form-control" id="personsearch"></input>
+										<label class="control-label" id="tab2-first-label">Tab2 first</label>
+										<input class="form-control" id="tab2-first"></input>
 									</div>
 								</form>
 							</div>
@@ -314,56 +349,11 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-default" onclick="add_new_author_click(event);">Add</button>
+						<button type="button" class="btn btn-default" id="stuff-submit">Add</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
-		
-		<!-- add organization modal -->
-		<div class="modal fade" id="organization_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-vertical-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Add new managing organization <span class="glyphicon glyphicon-info-sign"></span></h4>
-					</div>
-					<div class="modal-body">
-						<!-- Nav tabs -->
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#aaa" data-toggle="tab">Add new organization</a></li>
-							<li><a href="#bbb" data-toggle="tab">Search organizations</a></li>
-						</ul>
-
-						<!-- Tab panes -->
-						<div class="tab-content">
-							<div class="tab-pane active" id="aaa">
-								<form role="form">
-									<div class="form-group">
-										<label class="control-label">Name of the organization</label>
-										<input class="form-control" id="orgname"></input>
-									</div>
-								</form>
-							</div>
-							<div class="tab-pane" id="bbb">
-								<form role="form">
-									<div class="form-group">
-										<label class="control-label">Search for organization</label>
-										<input class="form-control" id="orgsearch"></input>
-									</div>
-								</form>
-							</div>
-						</div>
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-default" onclick="add_new_organization_click(event);">Add</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		
 		
 		<!-- add info modal -->
 		<div class="modal fade" id="info_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -378,6 +368,63 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		<!-- Preview modal -->
+		<div class="modal fade" id="preview-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Preview new Article</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<h1>Basic article information</h1>
+							<div class="form-group">
+								<label class="control-label">Title</label>
+								<input class="form-control" disabled id="preview-title"></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Publication state</label>
+								<input class="form-control" disabled id="preview-state"></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Journal</label>
+								<input class="form-control" disabled id="preview-journal"></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Journal year</label>
+								<input class="form-control" disabled id="preview-journal-year"></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Journal month</label>
+								<input class="form-control" disabled id="preview-journal-month"></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Authors</label>
+								<ul class="list-group" id="preview-authors">
+								</ul>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Managing Organizational Units</label>
+								<ul class="list-group" id="preview-organizations">
+								</ul>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Peer-reviewed</label>
+								<input class="form-control" disabled id="preview-peer"></input>
+							</div>
+							<hr>
+							<h1>Additional information</h1>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Add</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
