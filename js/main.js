@@ -46,6 +46,17 @@ $(document).ready(function() {
 	data["Research output"]["Book"][0] = "Book";
 	data["Research output"]["Book"][1] = "Anthology";
 	data["Activity"] = {};
+	
+function select_click() {
+	
+}
+
+function import_bibtex() {
+	$("#file-input").val("");
+	$("#output-data").prepend("<div class='row'><h1>Getting to know computer science freshmen</h1><p><b>Authors: </b>Kinnunen, Päivi and Marttila-Kontio, Maija and Pesonen, Erkki<b>2013</b></p></div><hr/>");
+	$("#output-data").prepend("<div class='row'><h1>Arguments for an information-centric internetworking architecture</h1><p><b>Authors: </b>Trossen, Dirk and Sarela, Mikko and Sollins, Karen<b>2010</b></p></div><hr/>");
+	$("#output-data").prepend("<div class='row'><h1>A Survey of Ethernet LAN Security</h1><p><b>Authors: </b>Kiravuo, Timo and Sarela, Mikko and Manner, Jukka<b>2013</b></p></div><hr/>");
+}
 
 function type_select() {
 	var item = $("#type-select").val();
