@@ -49,3 +49,11 @@ transform: translate(0, 50%) !important;
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+#tiles > div > div {
+	border-style: dashed;
+	border-width: 3px;
+	border-color: black;
+	margin: 15px;
+	cursor: pointer;
+}
