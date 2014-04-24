@@ -318,6 +318,6 @@ function add_article() {
 		var author = $($("#authors").children()[i]).attr("data-value");
 		authors += author + ", ";
 	}
-	authors = authors.substring(0,authors.length - 1);
+	authors = authors.substring(0,authors.length - 2);
 	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>"+$("#title").val()+"</h1><p><b>Authors: </b>"+authors+"<br/><b>"+$("#year-input").val()+"</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly created</h3></div></div>");
 }
