@@ -1,0 +1,197 @@
+﻿body {
+  margin: 0;
+  font: 12px "Trebuchet MS", sans-serif;
+  background: #f5f8f9;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+header {
+  height: 66px;
+  display: block;
+  width: 100%;
+  background: #5c9ccc;
+}
+
+header a {
+  color: white;
+}
+
+#name {
+  float: left;
+  margin-left: 22px;
+}
+
+#user {
+  float: right;
+  height: 42px;
+  padding: 0 15px;
+  background: #dfeffc;
+  border-left: 1px solid #2e6e9e;
+  border-right: 1px solid #2e6e9e;
+  border-bottom: 1px solid #2e6e9e;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#user  #test_user_name {
+  float: left;
+  padding-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #2e6e9e;
+}
+
+#search, #logout { 
+  float: right;
+  height: 42px;
+  width: 100px;
+  padding: 0 15px;
+}
+
+#content {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+#inner_content {
+  float: left;
+  background: white;
+  width: 100%;
+  height: 850px;
+}
+
+#menu_container {
+  width:220px;
+  float: left;
+}
+
+#top_left_menu li {
+  margin-top: 8px;
+}
+
+#top_left_menu li a {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background: #01DF3A;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#breadcrumb {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#breadcrumb  span {
+  float: left;
+  height: 10px;
+  width: 10px;
+  margin-top: -1px;
+}
+
+.nav-list {
+  float: left;
+  width: 200px;
+  border: none;
+}
+
+#left_menu li {
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px dotted #e5e5e5;
+}
+
+#left_menu a {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: black;
+  font-size: 13px;
+}
+
+#top_left_menu {
+  margin-bottom: 20px;
+}
+
+.nav-list .active {
+  border: 1px solid #79b7e7;
+	background: #f5f8f9 url("redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") 50% 50% repeat-x;
+	font-weight: bold;
+	color: #e17009;
+}
+
+.dropdown-menu .active a{
+  display: block;
+  background: white;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+
+#top_left_menu  .active {
+  border: none;
+  background: #01DF3A;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#page_content {
+  float: left;
+  width: 75%;
+  pAdding-top: 15px;
+  padding-left: 15px;
+}
+
+#sub_menu {
+  margin-top: 30px;
+  border: none;
+}
+
+#sub_menu div {
+  height: 400px;
+  width: 100%;
+}
+
+#popup_menu {
+  width: 129px;
+  margin-top: 42px;
+  margin-left: -17px;
+  z-index: 10;
+  position: relative;
+  display:none;
+}
+
+.nav-tabs {
+  padding: .2em .2em 0;
+  border-radius: 5px;
+  font-weight: bold;
+  line-height: 1.3;
+  border: 1px solid #4297d7;
+}
+
+.nav-tabs li a {
+  padding: .5em 1em;
+  background: #dfeffc;
+  color: #2e6e9e;
+}
+
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #e17009;
+}

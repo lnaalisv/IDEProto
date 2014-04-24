@@ -1,73 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		
-		<link rel="stylesheet" href="css/styles.css">
-		
-		<link rel="stylesheet" href="css/jquery-ui-1.10.4.min.css">
-
-		<!-- Optional theme -->
-		<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
-
-		<script src="js/jquery.min.js"></script>
-		
-		<script src="js/jquery-ui-1.10.4.min.js"></script>
-		
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="js/bootstrap.min.js"></script>	
-		
-		<script src="js/bootstrap3-typeahead.min.js"></script>	
-		
-		<script src="js/main.js"></script>
-	</head>
-	<body>
-		<div class="jumbotron">
-			<h1>Top bar</h1>
-		</div>
-		
-		<div class="container">
-		
-			<div class="panel panel-default">
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Prototype Research Information System 1.0</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> <!-- harrin tyylit -->
+	<link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- laurin tyylit -->
+	
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap3-typeahead.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <div id="name"><h1>Test system</h1></div>
+    <div id="logout"></div>
+    <div id="user" class="dropdown">
+      <a href="#" id="test_user_name" class="dropdown-toggle" data-toggle="dropdown"><b>Test user</b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#main-personal" data-toggle="tab">Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="#main-personal" data-toggle="tab">Settings</a></li>
+        <li class="divider"></li>
+        <li><a href="#main-personal" data-toggle="tab">Trusted users</a></li>
+      </ul>
+    </div>
+    <div id="search"></div>
+  </header>
+  <div id="content">
+    <div id="breadcrumb">
+      <a href="#" class="icon-black icon-home"></a> Home > Personal overview > My research
+    </div>
+    <div id="inner_content">
+      <div id="menu_container">
+        <ul id="top_left_menu" class="nav nav-list">
+          <li><a href="#main-add" data-toggle="tab" onclick="add_new_click(event);">Add New</a></li>
+          <li><a href="#main-import" data-toggle="tab" onclick="import_click(event);">Import</a></li>
+        </ul>
+        <ul id="left_menu" class="nav nav-list">
+          <li class="active"><a href="#main-personal" data-toggle="tab">Personal overview</a></li>
+          <li><a href="#main-research" data-toggle="tab">Research output</a></li>
+          <li><a href="#main-activities" data-toggle="tab">Activities</a></li>
+          <li><a href="#main-press" data-toggle="tab">Press clippings</a></li>
+          <li><a href="#main-impacts" data-toggle="tab">Impacts</a></li>
+          <li><a href="#main-applications" data-toggle="tab">Applications</a></li>
+          <li><a href="#main-award" data-toggle="tab">Award</a></li>
+          <li><a href="#main-projects" data-toggle="tab">Projects</a></li>
+          <li><a href="#main-datasets" data-toggle="tab">Datasets</a></li>
+          <li><a href="#main-report" data-toggle="tab">Report definitions</a></li>
+        </ul>
+      </div>
+      <div id="page_content">
+        <div class="tab-content">
+          <div class="tab-pane" id="main-add">
+			<!-- add new panel -->
+            <div class="panel panel-default">
 				<div class="panel-heading">
 					<h1>Add new</h1>
 				</div>
 				<div class="panel-body">
+					<h1>Most used templates</h1>
 					<div class="row" id="tiles">
-						<div class="col-sm-4">
+						<div class="col-sm-4" data-toggle="tab" href="#new-article">
 							<div>
-								<p>Book</p>
+								<p>Article</p>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div>
-								<p>Book</p>
+								<p>Conference contribution</p>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div>
-								<p>Book</p>
+								<p>Research</p>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div>
-								<p>Book</p>
+								<p>Research and teaching</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div>
+								<p>Paper</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div>
+								<p>Editorial</p>
 							</div>
 						</div>
 					</div>
-					<hr>
+					<div class="linebreak">
+					  <p style="background-color: white; position: relative; top: -0.5em;">
+						OR
+					  </p>
+					</div>
 					<div class="row">
 						<form role="form horizontal">
 							<div class="form-group">
 								<div class="col-sm-4">
-									<label class="control-label">Type</label>
+									<label class="control-label">Item type</label>
 									<select class="form-control" id="type-select">
-										<option>A</option>
+										<option>Research output</option>
 										<option>B</option>
 										<option>C</option>
 									</select>
@@ -93,8 +133,16 @@
 					</div>
 				</div>
 			</div>
-			
-			<div class="panel panel-default">
+			<!-- end add new -->
+          </div>
+          <div class="tab-pane" id="main-import">
+            <h1>Import</h1>
+          </div>
+		  <div class="tab-pane" id="new-article">
+           <!-- NEW ARTICLE TABI -->
+		   
+		   
+		   <div class="panel panel-default">
 				<!-- panel header -->
 				<div class="panel-heading">
 					<h1>Add new Article</h1>
@@ -104,7 +152,7 @@
 				<div class="panel-body">
 
 					<!-- Nav tabs -->
-					<ul class="nav nav-tabs tabs">
+					<ul class="nav nav-tabs tabs" style="background: #f5f8f9 url('css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png') 50% 50% repeat-x;">
 						<li id="ah" class="active"><a href="#a" data-toggle="tab">Basic Information *</a></li>
 						<li id="bh"><a href="#b" data-toggle="tab">Additional Information</a></li>
 						<li id="ch"><a href="#c" data-toggle="tab">Relations</a></li>
@@ -356,20 +404,69 @@
 						</div>
 					</div>
 
-					
-					<!-- save button -->
-					<!--<div class="row mpz">
-						<div class="col-sm-8 alert alert-danger" id="error-bar">Please fill in all the required fields</div>
-						<div class="col-sm-2"></div>
-						<button type="button" class="btn btn-default col-sm-2" onclick="preview_and_save();">Preview and save</button>
-					</div>-->
 					<button type="button" class="btn btn-default col-sm-2 pull-right" onclick="preview_and_save();">Preview and save</button>
 				</div>
 			</div>
-		</div>
-		
-		
-		<!-- add stuff modal -->
+		   
+		   <!-- NEW ARTICLE END -->
+          </div>
+          <div class="tab-pane active" id="main-personal">
+            <h1>Personal overview</h1>
+            <h2 style="margin-left: 20px;margin-top:10px;">Test User</h2>
+            <h3 style="margin-left: 20px;">School of schools</h3>
+            <div id="sub_menu">
+              <ul class="nav nav-tabs" style="background: #f5f8f9 url('css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png') 50% 50% repeat-x;">
+                <li class="active"><a href="#personal-tabs-1" data-toggle="tab">My research</a></li>
+                <li><a href="#personal-tabs-2" data-toggle="tab">My CVs</a></li>
+                <li><a href="#personal-tabs-3" data-toggle="tab">Profile</a></li>
+                <li><a href="#personal-tabs-4" data-toggle="tab">Settings</a></li>
+                <li><a href="#personal-tabs-5" data-toggle="tab">Trusted users</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="personal-tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                <div class="tab-pane" id="personal-tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+                <div class="tab-pane" id="personal-tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+                <div class="tab-pane" id="personal-tabs-4">Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue. Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. </div>
+                <div class="tab-pane" id="personal-tabs-5">Mauris porttitor, Phasellus mattis tincidunt nibh. Cras orci urna, blandit id. Mauris porttitor ullamcorper augue. quis nostrud exercitation ullamco. </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="main-research">
+            <h1>Research output</h1>
+          </div>
+          <div class="tab-pane" id="main-activities">
+            <h1>Activities</h1>
+          </div>
+          <div class="tab-pane" id="main-press">
+            <h1>Press clippings</h1>
+          </div>
+          <div class="tab-pane" id="main-impacts">
+            <h1>Impacts</h1>
+          </div>
+          <div class="tab-pane" id="main-applications">
+            <h1>Applications</h1>
+          </div>
+          <div class="tab-pane" id="main-award">
+            <h1>Award</h1>
+          </div>
+          <div class="tab-pane" id="main-projects">
+            <h1>Projects</h1>
+          </div>
+          <div class="tab-pane" id="main-datasets">
+            <h1>Datasets</h1>
+          </div>
+          <div class="tab-pane" id="main-report">
+            <h1>Report definitions</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="right_menu">
+  </div>
+  
+  <!-- MODAALIT -->
+  <!-- add stuff modal -->
 		<div class="modal fade" id="stuff-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-vertical-centered">
 				<div class="modal-content">
@@ -379,7 +476,7 @@
 					</div>
 					<div class="modal-body">
 						<!-- Nav tabs -->
-						<ul class="nav nav-tabs">
+						<ul class="nav nav-tabs" style="background: #f5f8f9 url('css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png') 50% 50% repeat-x;">
 							<li class="active"><a href="#aa" data-toggle="tab" id="add-stuff-tab1-header">Add new STUFF</a></li>
 							<li><a href="#bb" data-toggle="tab"  id="add-stuff-tab2-header">Search STUFF</a></li>
 						</ul>
@@ -507,5 +604,5 @@
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
-	</body>
+</body>
 </html>

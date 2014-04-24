@@ -1,4 +1,13 @@
-
+$(function() {
+  $('.dropdown-menu li').click(function() {
+    $('#left_menu .active:first').toggleClass('active');
+    $('#left_menu li:first').toggleClass('active');
+    $('.tab-content .active:first').toggleClass('active');
+    $('#main-personal').toggleClass('active');
+    $('#sub_menu li:first').toggleClass('active');
+  });
+});
+	
 $(document).ready(function() {
 
 	$("#title-error").hide();
@@ -14,6 +23,13 @@ $(document).ready(function() {
 	$(".sortable").sortable();
 });
 
+function add_new_click(event) {
+	$("#left_menu > li").removeClass("active");
+}
+
+function import_click(event) {
+	$("#left_menu li").removeClass("active");
+}
 
 function add_stuff_to_list(stuff,list) {
 	$(list).append("<li class=\"list-group-item\" data-value='"+stuff+"'>"+stuff+" <span class=\"glyphicon glyphicon-remove-sign pull-right\" onclick=\"remove_list_item(this);\"></span></li>");

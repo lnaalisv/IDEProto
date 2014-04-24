@@ -53,7 +53,26 @@ transform: translate(0, 50%) !important;
 #tiles > div > div {
 	border-style: dashed;
 	border-width: 3px;
-	border-color: black;
+	border-color: #333333;
 	margin: 15px;
 	cursor: pointer;
+	height: 150px;
+	text-align: center;
+	padding-top:50px;
+	background-color: #CCCCCC;
+}
+#tiles > div > div > p {
+	font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
+	font-size: 28px;
+	color: #333333;
+}
+
+.linebreak {
+	height: 2px; 
+	background-color: black; 
+	text-align: center;
+}
+
+.panel-heading {
+	background-color: #5C9CCC !important;
 }
