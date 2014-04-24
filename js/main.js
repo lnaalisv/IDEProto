@@ -66,9 +66,9 @@ function select_click() {
 	var item = $("#type-select3").val();
 	if(item == "Journal Article") {
 		$("#main-add").toggleClass("active");
-		$("#new-article").toggleClass("active");;
+		$("#new-article").toggleClass("active");
 		empty_article();
-		$('#top_left_menu .active:first').toggleClass('active');
+		$('#top_left_menu .active').toggleClass('active');
 	}
 }
 
