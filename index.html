@@ -463,13 +463,16 @@
 				</div>
 				<div class="panel-body" id="output-data">
 					<div class="row">
-						<h1>Energy Efficient Multimedia Streaming to Mobile Devices</h1>
-						<p><b>Authors: </b>Mohammad Hoque, Matti Siekkinen and Jukka K. Nurminen<br/><b>2012</b></p>
+						<div class="col-sm-6">
+							<h1>Energy Efficient Multimedia Streaming to Mobile Devices</h1>
+							<p><b>Authors: </b>Mohammad Hoque, Matti Siekkinen and Jukka K. Nurminen<br/><b>2012</b></p>
+						</div>
 					</div>
-					<hr>
 					<div class="row">
-						<h1>Using Crowd Sourced Viewing Statistics to Save Energy in Wireless Video Streaming</h1>
-						<p><b>Authors: </b>Mohammad Hoque, Matti Siekkinen and Jukka K. Nurminen<br/><b>2013</b></p>
+						<div class="col-sm-6">
+							<h1>Using Crowd Sourced Viewing Statistics to Save Energy in Wireless Video Streaming</h1>
+							<p><b>Authors: </b>Mohammad Hoque, Matti Siekkinen and Jukka K. Nurminen<br/><b>2013</b></p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -663,7 +666,30 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="tab" href="#main-research" onclick="import_bibtex();">Import</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" href="#import2-modal" onclick="import_bibtex();">Import</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		<!-- import2 modal -->
+		<div class="modal fade" id="import2-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Select references to import</h4>
+					</div>
+					<div class="modal-body">
+						<ul class="list-group">
+							<li class="list-group-item"><input type="checkbox" checked> Getting to know computer science freshmen</li>
+							<li class="list-group-item"><input type="checkbox" checked> Arguments for an information-centric internetworking architecture</li>
+							<li class="list-group-item"><input type="checkbox" checked> A Survey of Ethernet LAN Security</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="tab" href="#main-research" onclick="import_bibtex2();">Import</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->

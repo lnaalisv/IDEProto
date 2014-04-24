@@ -90,4 +90,13 @@ transform: translate(0, 50%) !important;
 
 #output-data > div{
 	padding: 10px !important;
+	border-bottom: 1px solid black;
+}
+
+.imported {
+	font-size: 24px;
+}
+
+.imported-row {
+	background-color: #DFF0D8;
 }
