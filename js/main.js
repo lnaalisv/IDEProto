@@ -21,14 +21,59 @@ $(document).ready(function() {
 	$("#title").on("input",title_change);
 	
 	$(".sortable").sortable();
+	
+	type_select();
+	type_select2();
+	
+	$('#top_left_menu a').click(function() {
+    $('#left_menu .active:first').toggleClass('active');
+  });
+  $('#left_menu a').click(function() {
+    $('#top_left_menu .active:first').toggleClass('active');
+  });
 });
 
+	var data = {};
+	data["Research output"] = {};
+	data["Research output"]["Contribution to journal"] = {};
+	data["Research output"]["Contribution to journal"][0] = "Article";
+	data["Research output"]["Contribution to journal"][1] = "Letter";
+	data["Research output"]["Contribution to journal"][2] = "Editorial";
+	data["Research output"]["Working paper"] = {};
+	data["Research output"]["Working paper"][0] = "Working paper";
+	data["Research output"]["Working paper"][1] = "Discussion paper";
+	data["Research output"]["Book"] = {};
+	data["Research output"]["Book"][0] = "Book";
+	data["Research output"]["Book"][1] = "Anthology";
+	data["Activity"] = {};
+
+function type_select() {
+	var item = $("#type-select").val();
+	$("#type-select2").html("");
+	$("#type-select3").html("");
+	for(var prop in data[item]) {
+		$("#type-select2").append("<option>" + prop + "</option>");
+	}
+	
+	type_select2();
+}
+
+function type_select2() {
+	var item = $("#type-select").val();
+	var item2 = $("#type-select2").val();
+	$("#type-select3").html("");
+	var items = data[item][item2];
+	for(var prop in data[item][item2]) {
+		$("#type-select3").append("<option>" + data[item][item2][prop] + "</option>");
+	}
+}
+
 function add_new_click(event) {
-	$("#left_menu > li").removeClass("active");
+	//$("#left_menu > li").removeClass("active");
 }
 
 function import_click(event) {
-	$("#left_menu li").removeClass("active");
+	//$("#left_menu li").removeClass("active");
 }
 
 function add_stuff_to_list(stuff,list) {

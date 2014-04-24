@@ -64,7 +64,7 @@
 				</div>
 				<div class="panel-body">
 					<h1>Most used templates</h1>
-					<div class="row" id="tiles">
+					<div class="row tiles">
 						<div class="col-sm-4" data-toggle="tab" href="#new-article">
 							<div>
 								<p>Article</p>
@@ -97,37 +97,35 @@
 						</div>
 					</div>
 					<div class="linebreak">
-					  <p style="background-color: white; position: relative; top: -0.5em;">
-						OR
-					  </p>
+					  <span>OR</span>
 					</div>
 					<div class="row">
 						<form role="form horizontal">
 							<div class="form-group">
 								<div class="col-sm-4">
-									<label class="control-label">Item type</label>
-									<select class="form-control" id="type-select">
-										<option>Research output</option>
-										<option>B</option>
-										<option>C</option>
+									<label class="control-label">1. Item type</label>
+									<select class="form-control" id="type-select" onchange="type_select(event);">
+										<option selected>Research output</option>
+										<option>Activity</option>
+										<option>Press Clipping</option>
+										<option>Impact</option>
+										<option>Application</option>
+										<option>Award</option>
+										<option>Project</option>
+										<option>Dataset</option>
 									</select>
 								</div>
 								<div class="col-sm-4">
-									<label class="control-label">Type2</label>
-									<select class="form-control" id="type-select2">
-										<option>A</option>
-										<option>B</option>
-										<option>C</option>
+									<label class="control-label">2. Item specific type</label>
+									<select class="form-control" id="type-select2" onchange="type_select2(event);">
 									</select>
 								</div>
 								<div class="col-sm-4">
-									<label class="control-label">Type3</label>
+									<label class="control-label">3. Even more specific type</label>
 									<select class="form-control" id="type-select3">
-										<option>A</option>
-										<option>B</option>
-										<option>C</option>
 									</select>
 								</div>
+								<button type="button" class="btn btn-default" style="width:100%;margin-top: 15px;" data-toggle="tab" href="#new-article">Select</button>
 							</div>
 						</form>
 					</div>
@@ -136,7 +134,34 @@
 			<!-- end add new -->
           </div>
           <div class="tab-pane" id="main-import">
-            <h1>Import</h1>
+             <div class="panel panel-default">
+				<!-- panel header -->
+				<div class="panel-heading">
+					<h1>Import item</h1>
+				</div>
+				
+				<!-- panel body -->
+				<div class="panel-body">
+				
+					<div class="row tiles">
+						<div class="col-sm-4">
+							<div>
+								<p>BiBTeX</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div>
+								<p>RIS</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div>
+								<p>CERIF in Action</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
           </div>
 		  <div class="tab-pane" id="new-article">
            <!-- NEW ARTICLE TABI -->

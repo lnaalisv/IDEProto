@@ -50,7 +50,7 @@ transform: translate(0, 50%) !important;
 	padding-right: 15px;
 }
 
-#tiles > div > div {
+.tiles > div > div {
 	border-style: dashed;
 	border-width: 3px;
 	border-color: #333333;
@@ -61,7 +61,7 @@ transform: translate(0, 50%) !important;
 	padding-top:50px;
 	background-color: #CCCCCC;
 }
-#tiles > div > div > p {
+.tiles > div > div > p {
 	font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
 	font-size: 28px;
 	color: #333333;
@@ -69,8 +69,19 @@ transform: translate(0, 50%) !important;
 
 .linebreak {
 	height: 2px; 
-	background-color: black; 
+	background-color: #333333; 
 	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.linebreak > span {
+	background-color: white;
+	position: relative; 
+	top: -0.5em;
+	font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
+	font-size: 28px;
+	color: #333333;
 }
 
 .panel-heading {
