@@ -57,8 +57,9 @@ function select_click() {
 
 function import_bibtex() {
 	$("#file-input").val("");
+	$("#import2-modal").modal("show");
 }
-function import_bibtex() {
+function import_bibtex2() {
 // <div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div>
 	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>Getting to know computer science freshmen</h1><p><b>Authors: </b>Kinnunen, Päivi and Marttila-Kontio, Maija and Pesonen, Erkki<br/><b>2013</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
 	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>Arguments for an information-centric internetworking architecture</h1><p><b>Authors: </b>Trossen, Dirk and Sarela, Mikko and Sollins, Karen<b>2010</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
