@@ -1,3 +1,17 @@
+var data = {};
+data["Research output"] = {};
+data["Research output"]["Contribution to journal"] = {};
+data["Research output"]["Contribution to journal"][0] = "Journal Article";
+data["Research output"]["Contribution to journal"][1] = "Letter";
+data["Research output"]["Contribution to journal"][2] = "Editorial";
+data["Research output"]["Working paper"] = {};
+data["Research output"]["Working paper"][0] = "Working paper";
+data["Research output"]["Working paper"][1] = "Discussion paper";
+data["Research output"]["Book"] = {};
+data["Research output"]["Book"][0] = "Book";
+data["Research output"]["Book"][1] = "Anthology";
+data["Activity"] = {};
+	
 $(function() {
   $('.dropdown-menu li').click(function() {
     $('#left_menu .active:first').toggleClass('active');
@@ -33,26 +47,34 @@ $(document).ready(function() {
   });
 });
 
-	var data = {};
-	data["Research output"] = {};
-	data["Research output"]["Contribution to journal"] = {};
-	data["Research output"]["Contribution to journal"][0] = "Journal Article";
-	data["Research output"]["Contribution to journal"][1] = "Letter";
-	data["Research output"]["Contribution to journal"][2] = "Editorial";
-	data["Research output"]["Working paper"] = {};
-	data["Research output"]["Working paper"][0] = "Working paper";
-	data["Research output"]["Working paper"][1] = "Discussion paper";
-	data["Research output"]["Book"] = {};
-	data["Research output"]["Book"][0] = "Book";
-	data["Research output"]["Book"][1] = "Anthology";
-	data["Activity"] = {};
+function empty_article() {
+	$("#title").val("");
+	$("#year-input").val("");
+	$("#month-input").val("");
+	$("#journals").html("");
+	$("#organizations").html("");
+	$("#authors").html("");
+	$("#numpages").val("");
+	$("#abstract").val("");
+	$("#doi").val("");
+	$("#jpages").val("");
+	$("#jvolume").val("");
+	$("#jissue").val("");
+}
 	
 function select_click() {
 	var item = $("#type-select3").val();
 	if(item == "Journal Article") {
 		$("#main-add").toggleClass("active");
 		$("#new-article").toggleClass("active");;
+		empty_article();
+		$('#top_left_menu .active:first').toggleClass('active');
 	}
+}
+
+function article_button_click() {
+	empty_article();
+	$('#top_left_menu .active').toggleClass('active');
 }
 
 function import_bibtex() {
@@ -320,4 +342,5 @@ function add_article() {
 	}
 	authors = authors.substring(0,authors.length - 2);
 	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>"+$("#title").val()+"</h1><p><b>Authors: </b>"+authors+"<br/><b>"+$("#year-input").val()+"</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly created</h3></div></div>");
+	empty_article();
 }

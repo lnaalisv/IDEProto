@@ -65,7 +65,7 @@
 				<div class="panel-body">
 					<h1>Most used templates</h1>
 					<div class="row tiles">
-						<div class="col-sm-4" data-toggle="tab" href="#new-article">
+						<div class="col-sm-4" data-toggle="tab" href="#new-article" onclick="empty_article();">
 							<div>
 								<p>Journal Article</p>
 							</div>
@@ -294,15 +294,15 @@
 										</div>
 										<div class="form-group">
 											<label class="control-label">Number of pages <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<input class="form-control"></input>
+											<input class="form-control" id="numpages"></input>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Abstract <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<textarea class="form-control" rows="3"></textarea>
+											<textarea class="form-control" rows="3" id="abstract"></textarea>
 										</div>
 										<div class="form-group">
 											<label class="control-label">DOI <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<input class="form-control"></input>
+											<input class="form-control" id="doi"></input>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Links <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
@@ -367,15 +367,15 @@
 										</div>
 										<div class="form-group">
 											<label class="control-label">Journal Pages (from-to <span class="glyphicon glyphicon-info-sign"></span>)</label>
-											<input class="form-control"></input>
+											<input class="form-control" id="jpages"></input>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Journal Volume Number <span class="glyphicon glyphicon-info-sign"></span></label>
-											<input class="form-control"></input>
+											<input class="form-control" id="jvolume"></input>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Journal Issue Number <span class="glyphicon glyphicon-info-sign"></span></label>
-											<input class="form-control"></input>
+											<input class="form-control" id="jissue"></input>
 										</div>
 									</div>
 								</div>
