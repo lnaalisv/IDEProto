@@ -217,7 +217,9 @@ function organization_init() {
 function organization_submit() {
 	var aa = $("#tab1-first").val();
 	var cc = $("#tab2-first").val();
-	if(cc != "") {
+	var stuff1tab = $("#stuff1tab");
+	var tab1_selected = stuff1tab.hasClass("active");
+	if(cc != "" && !tab1_selected) {
 		add_stuff_to_list(cc,"#organizations");
 	} else {
 		add_stuff_to_list(aa,"#organizations");
@@ -241,7 +243,9 @@ function author_submit() {
 	var aa = $("#tab1-first").val();
 	var bb = $("#tab1-last").val();
 	var cc = $("#tab2-first").val();
-	if(cc != "") {
+	var stuff1tab = $("#stuff1tab");
+	var tab1_selected = stuff1tab.hasClass("active");
+	if(cc != "" && !tab1_selected) {
 		add_stuff_to_list(cc,"#authors");
 	} else {
 		add_stuff_to_list(aa + " " + bb,"#authors");
