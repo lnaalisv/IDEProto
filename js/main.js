@@ -339,6 +339,9 @@ function preview_and_save() {
 		$("#preview-journal-year").val($("#year-input").val());
 		$("#preview-journal-month").val($("#month-input").val());
 		
+		$("#preview-authors").html("");
+		$("#preview-organizations").html("");
+		
 		for(var i = 0 ; i < $("#authors").children().length ; i++) {
 			var author = $($("#authors").children()[i]).attr("data-value");
 			$("#preview-authors").append("<li class='list-group-item'>"+author+"</li>");
