@@ -11,6 +11,8 @@ data["Research output"]["Book"] = {};
 data["Research output"]["Book"][0] = "Book";
 data["Research output"]["Book"][1] = "Anthology";
 data["Activity"] = {};
+
+var journals_array = ["ACM SIGCOMM Computer Communication Review", "Informatics in Education - An International Journal","MIS Quartely", "Journal of Engineering Education", "IEEE COMMUNICATIONS SURVEYS AND TUTORIALS"];
 	
 $(function() {
   $('.dropdown-menu li').click(function() {
@@ -177,7 +179,7 @@ function init_stuff_modal(header,tab1,tab2,tab1firstlabel,tab1lastlabel,tab2firs
 function journal_init() {
 	$("#tab2-first").typeahead("destroy");
 	$("#tab2-first").typeahead({
-		source: ["ACM SIGCOMM Computer Communication Review", "MIS Quartely", "Journal of Engineering Education", "IEEE COMMUNICATIONS SURVEYS AND TUTORIALS"]
+		source: journals_array
 	});
 	$("#tab1-last-group").hide();
 }
@@ -186,7 +188,12 @@ function journal_submit() {
 	var aa = $("#tab1-first").val();
 	var cc = $("#tab2-first").val();
 	if(cc != "") {
-		add_stuff_to_list(cc,"#journals");
+		if(journals_array.indexOf(cc) != -1) {
+			add_stuff_to_list(cc,"#journals");
+		} else {
+			alert("Journal: " + cc + " not found!");
+			return;
+		}
 	} else {
 		add_stuff_to_list(aa,"#journals");
 	}
