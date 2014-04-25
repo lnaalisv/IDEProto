@@ -187,7 +187,9 @@ function journal_init() {
 function journal_submit() {
 	var aa = $("#tab1-first").val();
 	var cc = $("#tab2-first").val();
-	if(cc != "") {
+	var stuff1tab = $("#stuff1tab");
+	var tab1_selected = stuff1tab.hasClass("active");
+	if(cc != "" && !tab1_selected) {
 		if(journals_array.indexOf(cc) != -1) {
 			add_stuff_to_list(cc,"#journals");
 		} else {
