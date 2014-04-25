@@ -348,7 +348,13 @@ function preview_and_save() {
 			$("#preview-organizations").append("<li class='list-group-item'>"+organization+"</li>");
 		}		
 		
-		$("#preview-peer").val($("#month-input").val());
+		
+		$("#preview-peer").val($("#peer-input input:checked").val());
+		$("#preview-pages").val($("#numpages").val());
+		$("#preview-abstract").val($("#abstract").val());
+		$("#preview-doi").val($("#doi").val());
+		$("#preview-language").val($("#langinput").val());
+		$("#preview-jpages").val($("#jpages").val());
 		$("#preview-modal").modal("show");
 	} else {
 		$("#bh").removeClass("active");

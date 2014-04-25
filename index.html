@@ -260,13 +260,13 @@
 											</ul>
 											<button type="button" class="btn btn-default" data-toggle="modal" data-target="#stuff-modal" onclick="init_stuff_modal('Add new Organization','Add new Organization','Search for Organization','Name','Last name','Search',organization_submit,organization_init)">Add organizational unit</button>
 										</div>
-										<div class="form-group">
+										<div class="form-group" id="peer-input">
 											<label class="control-label">Peer-reviewed <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></label>
 											<div class="radio">
-												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Yes</label>
+												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="yes" checked>Yes</label>
 											</div>
 											<div class="radio">
-												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option2">No</label>
+												<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="no">No</label>
 											</div>
 										</div>
 									</div>
@@ -280,7 +280,7 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label class="control-label">Original language <span class="glyphicon glyphicon-info-sign"  data-toggle="modal" data-target="#info_modal"></span></label>
-											<select class="form-control">
+											<select class="form-control" id="langinput">
 												<option selected>English</option>
 												<option>Finnish</option>
 												<option>German</option>
@@ -637,6 +637,10 @@
 							<div class="form-group">
 								<label class="control-label">Number of pages</label>
 								<input class="form-control" disabled id="preview-pages"></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Journal Pages</label>
+								<input class="form-control" disabled id="preview-jpages"></input>
 							</div>
 							<div class="form-group">
 								<label class="control-label">Abstract</label>
