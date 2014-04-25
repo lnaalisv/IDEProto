@@ -20,6 +20,23 @@ $(function() {
     $('#main-personal').toggleClass('active');
     $('#sub_menu li:first').toggleClass('active');
   });
+  
+  $('#left_menu li a, #top_left_menu li a').click(function() {
+    if($(this).attr('href')=="#main-personal") {
+      $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Personal overview > '+$('#sub_menu .active:first').text());
+    } else {
+      $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > '+$('.tab-content:first '+$(this).attr('href')+' h1:first').text());
+    }
+  });
+  $('#sub_menu li').click(function() {
+    $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Personal overview > '+$(this).text());
+  });
+  $('#new-article .nav-tabs:first li').click(function() {
+    $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Add new > Article > '+$(this).text());
+  });
+  $('#import_bibtex').click(function() {
+    $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Import item > BiBTeX');
+  });
 });
 	
 $(document).ready(function() {
@@ -75,6 +92,7 @@ function select_click() {
 function article_button_click() {
 	empty_article();
 	$('#top_left_menu .active').toggleClass('active');
+  $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Add new > Article > '+$('#new-article .active:first a').text());
 }
 
 function import_bibtex() {
@@ -83,9 +101,18 @@ function import_bibtex() {
 }
 function import_bibtex2() {
 // <div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div>
-	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>Getting to know computer science freshmen</h1><p><b>Authors: </b>Kinnunen, Päivi and Marttila-Kontio, Maija and Pesonen, Erkki<br/><b>2013</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
-	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>Arguments for an information-centric internetworking architecture</h1><p><b>Authors: </b>Trossen, Dirk and Sarela, Mikko and Sollins, Karen<b>2010</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
-	$("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>A Survey of Ethernet LAN Security</h1><p><b>Authors: </b>Kiravuo, Timo and Sarela, Mikko and Manner, Jukka<b>2013</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
+	if($('#article_0:checked').length > 0) {
+    $("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>Getting to know computer science freshmen</h1><p><b>Authors: </b>Kinnunen, Päivi and Marttila-Kontio, Maija and Pesonen, Erkki<br/><b>2013</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
+	}
+  if($('#article_1:checked').length > 0) {
+    $("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>Arguments for an information-centric internetworking architecture</h1><p><b>Authors: </b>Trossen, Dirk and Sarela, Mikko and Sollins, Karen<b>2010</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
+	}
+  if($('#article_2:checked').length > 0) {
+    $("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>A Survey of Ethernet LAN Security</h1><p><b>Authors: </b>Kiravuo, Timo and Sarela, Mikko and Manner, Jukka<b>2013</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
+  }
+  $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Research output');
+  $('#top_left_menu .active:first, #left_menu .active:first').toggleClass('active');
+  $('#left_menu li:eq(1)').toggleClass('active');
 }
 
 function type_select() {
@@ -150,7 +177,7 @@ function init_stuff_modal(header,tab1,tab2,tab1firstlabel,tab1lastlabel,tab2firs
 function journal_init() {
 	$("#tab2-first").typeahead("destroy");
 	$("#tab2-first").typeahead({
-		source: ["ACM SIGCOMM Computer Communication Review", "Proceedings  of 41st SEFI Conference", "Proceedings of the 13th Koli Calling International Conference on Computing Education Research", "IEEE COMMUNICATIONS SURVEYS AND TUTORIALS"]
+		source: ["ACM SIGCOMM Computer Communication Review", "MIS Quartely", "Journal of Engineering Education", "IEEE COMMUNICATIONS SURVEYS AND TUTORIALS"]
 	});
 	$("#tab1-last-group").hide();
 }
