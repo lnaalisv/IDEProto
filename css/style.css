@@ -172,6 +172,15 @@ header a {
   padding: 1px 15px;
 }
 
+.edit_icon {
+  float: right;
+}
+
+.edit_button {
+  float: right;
+  padding: 10px 20px;
+}
+
 #sub_menu {
   margin-top: 30px;
   border: none;
