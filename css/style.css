@@ -150,7 +150,7 @@ header a {
 
 #top_left_menu  .active {
   border: none;
-  #background: #11EF4A;
+  background: #11EF4A;
   color: #FFFFFF;
   font-weight: bold;
   text-align: center;
