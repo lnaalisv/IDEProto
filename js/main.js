@@ -25,19 +25,19 @@ $(function() {
   
   $('#left_menu li a, #top_left_menu li a').click(function() {
     if($(this).attr('href')=="#main-personal") {
-      $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Personal overview > '+$('#sub_menu .active:first').text());
+      $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Personal overview > '+$('#sub_menu .active:first').text());
     } else {
-      $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > '+$('.tab-content:first '+$(this).attr('href')+' h1:first').text());
+      $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > '+$('.tab-content:first '+$(this).attr('href')+' h1:first').text());
     }
   });
   $('#sub_menu li').click(function() {
-    $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Personal overview > '+$(this).text());
+    $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Personal overview > '+$(this).text());
   });
   $('#new-article .nav-tabs:first li').click(function() {
-    $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Add new > Article > '+$(this).text());
+    $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Add new > Article > '+$(this).text());
   });
   $('#import_bibtex').click(function() {
-    $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Import item > BiBTeX');
+    $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Import item > BiBTeX');
   });
 });
 	
@@ -94,7 +94,7 @@ function select_click() {
 function article_button_click() {
 	empty_article();
 	$('#top_left_menu .active').toggleClass('active');
-  $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Add new > Article > '+$('#new-article .active:first a').text());
+  $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Add new > Article > '+$('#new-article .active:first a').text());
 }
 
 function import_bibtex() {
@@ -112,7 +112,7 @@ function import_bibtex2() {
   if($('#article_2:checked').length > 0) {
     $("#output-data").prepend("<div class='row imported-row'><div class='col-sm-6'><h1>A Survey of Ethernet LAN Security</h1><p><b>Authors: </b>Kiravuo, Timo and Sarela, Mikko and Manner, Jukka<b>2013</b></p></div><div class='col-sm-2'></div><div class='col-sm-4'><h3><span class='glyphicon glyphicon-ok'> Freshly imported</h3></div></div>");
   }
-  $('#breadcrumb').html('<a href="#" class="icon-black icon-home"></a> Home > Research output');
+  $('#breadcrumb').html('<a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Research output');
   $('#top_left_menu .active:first, #left_menu .active:first').toggleClass('active');
   $('#left_menu li:eq(1)').toggleClass('active');
 }

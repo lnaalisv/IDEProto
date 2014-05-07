@@ -33,25 +33,25 @@
   </header>
   <div id="content">
     <div id="breadcrumb">
-      <a href="#" class="icon-black icon-home"></a> Home > Personal overview > My research
+      <a href="#" class="glyphicon glyphicon-home" data-toggle="tab"></a> > Personal overview > My research
     </div>
     <div id="inner_content">
       <div id="menu_container">
         <ul id="top_left_menu" class="nav nav-list">
-          <li><a href="#main-add" data-toggle="tab" onclick="add_new_click(event);">Add New</a></li>
-          <li><a href="#main-import" data-toggle="tab" onclick="import_click(event);">Import</a></li>
+          <li><a href="#main-add" data-toggle="tab" onclick="add_new_click(event);">Add new</a></li>
+          <li><a href="#main-import" data-toggle="tab" onclick="import_click(event);">Import from...</a></li>
         </ul>
         <ul id="left_menu" class="nav nav-list">
-          <li class="active"><a href="#main-personal" data-toggle="tab">Personal overview</a></li>
-          <li><a href="#main-research" data-toggle="tab">Research output</a></li>
-          <li><a href="#main-activities" data-toggle="tab">Activities</a></li>
-          <li><a href="#main-press" data-toggle="tab">Press clippings</a></li>
-          <li><a href="#main-impacts" data-toggle="tab">Impacts</a></li>
-          <li><a href="#main-applications" data-toggle="tab">Applications</a></li>
-          <li><a href="#main-award" data-toggle="tab">Awards</a></li>
-          <li><a href="#main-projects" data-toggle="tab">Projects</a></li>
-          <li><a href="#main-datasets" data-toggle="tab">Datasets</a></li>
-          <li><a href="#main-report" data-toggle="tab">Report definitions</a></li>
+          <li class="active"><a href="#main-personal" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-home"></span>Personal overview</a></li>
+          <li><a href="#main-research" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Research output</a></li>
+          <li><a href="#main-activities" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Activities</a></li>
+          <li><a href="#main-press" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Press clippings</a></li>
+          <li><a href="#main-impacts" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Impacts</a></li>
+          <li><a href="#main-applications" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Applications</a></li>
+          <li><a href="#main-award" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Awards</a></li>
+          <li><a href="#main-projects" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Projects</a></li>
+          <li><a href="#main-datasets" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Datasets</a></li>
+          <li><a href="#main-report" data-toggle="tab"><span id="home_icon" class="glyphicon glyphicon-unchecked"></span>Report definitions</a></li>
         </ul>
       </div>
       <div id="page_content">
@@ -429,6 +429,8 @@
 						</div>
 					</div>
 
+					<button type="button" class="btn btn-default col-sm-2 pull-right draft_button">Cancel</button>
+					<button type="button" class="btn btn-default col-sm-2 pull-right draft_button">Save as draft</button>
 					<button type="button" class="btn btn-default col-sm-2 pull-right" onclick="preview_and_save();">Preview and save</button>
 				</div>
 			</div>
@@ -436,23 +438,29 @@
 		   <!-- NEW ARTICLE END -->
           </div>
           <div class="tab-pane active" id="main-personal">
-            <h1>Personal overview</h1>
-            <h2 style="margin-left: 20px;margin-top:10px;">Test User</h2>
-            <h3 style="margin-left: 20px;">School of schools</h3>
-            <div id="sub_menu">
-              <ul class="nav nav-tabs" style="background: #f5f8f9 url('css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png') 50% 50% repeat-x;">
-                <li class="active"><a href="#personal-tabs-1" data-toggle="tab">My research</a></li>
-                <li><a href="#personal-tabs-2" data-toggle="tab">My CVs</a></li>
-                <li><a href="#personal-tabs-3" data-toggle="tab">Profile</a></li>
-                <li><a href="#personal-tabs-4" data-toggle="tab">Settings</a></li>
-                <li><a href="#personal-tabs-5" data-toggle="tab">Trusted users</a></li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="personal-tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                <div class="tab-pane" id="personal-tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-                <div class="tab-pane" id="personal-tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
-                <div class="tab-pane" id="personal-tabs-4">Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue. Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. </div>
-                <div class="tab-pane" id="personal-tabs-5">Mauris porttitor, Phasellus mattis tincidunt nibh. Cras orci urna, blandit id. Mauris porttitor ullamcorper augue. quis nostrud exercitation ullamco. </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h1>Personal overview</h1>
+              </div>
+              <div class="panel-body">
+                <h2 style="margin-left: 20px;margin-top:10px;">Test User</h2>
+                <h3 style="margin-left: 20px;">School of schools</h3>
+                <div id="sub_menu">
+                  <ul class="nav nav-tabs" style="background: #f5f8f9 url('css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png') 50% 50% repeat-x;">
+                    <li class="active"><a href="#personal-tabs-1" data-toggle="tab">My research</a></li>
+                    <li><a href="#personal-tabs-2" data-toggle="tab">My CVs</a></li>
+                    <li><a href="#personal-tabs-3" data-toggle="tab">Profile</a></li>
+                    <li><a href="#personal-tabs-4" data-toggle="tab">Settings</a></li>
+                    <li><a href="#personal-tabs-5" data-toggle="tab">Trusted users</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="personal-tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <div class="tab-pane" id="personal-tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+                    <div class="tab-pane" id="personal-tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+                    <div class="tab-pane" id="personal-tabs-4">Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue. Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. </div>
+                    <div class="tab-pane" id="personal-tabs-5">Mauris porttitor, Phasellus mattis tincidunt nibh. Cras orci urna, blandit id. Mauris porttitor ullamcorper augue. quis nostrud exercitation ullamco. </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -478,36 +486,85 @@
 			</div>
           </div>
           <div class="tab-pane" id="main-activities">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Activities</h1>
+				</div>
+        <div class="panel-body">
+              
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
           <div class="tab-pane" id="main-press">
-            <h1>Press clippings</h1>
+            <div class="panel panel-default">
+            <div class="panel-heading">
+          <h1>Press clippings</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
           <div class="tab-pane" id="main-impacts">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Impacts</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
           <div class="tab-pane" id="main-applications">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Applications</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
           <div class="tab-pane" id="main-award">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Awards</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
           <div class="tab-pane" id="main-projects">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Projects</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
           <div class="tab-pane" id="main-datasets">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Datasets</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
+          </div>
+          </div>
           <div class="tab-pane" id="main-report">
+            <div class="panel panel-default">
+				<div class="panel-heading">
             <h1>Report definitions</h1>
+          </div>
+        <div class="panel-body">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
           </div>
         </div>
       </div>
